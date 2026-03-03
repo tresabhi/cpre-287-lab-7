@@ -12,8 +12,8 @@ analog_pin = analogio.AnalogIn(board.A0)
 while True:
     adc = analog_pin.value
     v = adc * adc_to_V
-    t = V_to_c * v
+    T = V_to_c * v
 
-    print(f"adc = {adc}\tv = {v:.3g}V\tt = {t:.3g}deg")
+    print(f"adc = {adc}\tv = {v:.3g}V\tT = {T:.3g}deg")
 
     time.sleep(0.1)
