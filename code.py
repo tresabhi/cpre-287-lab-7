@@ -4,6 +4,9 @@ import analogio
 
 analog_pin = analogio.AnalogIn(board.A0)
 
+def get_voltage(pin):
+    return (pin.value * 2.57) / 51000
+
 while True:
-    print(analog_pin.value)
+    print(get_voltage(analog_pin))
     time.sleep(0.1)
