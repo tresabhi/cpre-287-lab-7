@@ -3,6 +3,7 @@ import time
 from utils import c_to_f
 from actuation import set_damper as _set_damper
 from math import sin, pi
+from sensing import *
 
 # define some values?
 
@@ -135,6 +136,6 @@ if __name__ == "__main__":
         ]
 
         for zone in range(num_zones):
-            values.append(f"{zone_names[zone]}: {sim.get_temperature_f(zone):.2f}°f")
+            values.append(f"{zone_names[zone]}: {get_current_temperature_f(zone):.2f}°f")
 
         print("\t".join(values))

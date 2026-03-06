@@ -1,19 +1,19 @@
 import time
 import board
 import analogio
+from node_config import *
+import sensing
+import temperature_measurement_node
 
-adc_to_V = 2.57 / 51000
-c_to_mV = 10
-c_to_V = c_to_mV / 1000
-V_to_c = 1 / c_to_V
+if node_type == NODE_TYPE_RAW:
+    while True:
+        adc = sensing._lm35_pin.value
+        v = adc * sensing.adc_to_V
+        T = sensing.V_to_c * v
 
-analog_pin = analogio.AnalogIn(board.A0)
+        print(f"adc = {adc}\tv = {v:.3g}V\tT = {T:.3g}deg")
 
-while True:
-    adc = analog_pin.value
-    v = adc * adc_to_V
-    T = V_to_c * v
+        time.sleep(0.1)
 
-    print(f"adc = {adc}\tv = {v:.3g}V\tT = {T:.3g}deg")
-
-    time.sleep(0.1)
+elif node_type == NODE_TYPE_TEMPERATURE:
+    temperature_measurement_node.loop()

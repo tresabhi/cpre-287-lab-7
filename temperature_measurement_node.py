@@ -36,7 +36,7 @@ def loop():
         ]
 
         for zone in range(num_zones):
-            values.append(f"{zone_names[zone]}: {sim.get_temperature_f(zone):.2f}°f")
+            values.append(f"{zone_names[zone]}: {get_current_temperature_f(zone):.2f}°f")
 
         average()
 

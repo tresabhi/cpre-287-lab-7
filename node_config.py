@@ -3,9 +3,10 @@ NODE_TYPE_SIMULATED = 0
 NODE_TYPE_PRIMARY = 1
 NODE_TYPE_SECONDARY = 2
 NODE_TYPE_TEMPERATURE = 3
+NODE_TYPE_RAW = 4
 
 # Node's type, used to determine what code is run.
-node_type = NODE_TYPE_SIMULATED
+node_type = NODE_TYPE_RAW
 
 # Total number of zones in the system
 num_zones = 3
