@@ -30,17 +30,20 @@ def loop():
         sim.loop()
         time.sleep(0)
 
-        values = [
-            f"t = {sim.last_t:.2f}s\t",
-            f"Outside: {c_to_f(sim.outside_temp):.2f}°f",
-        ]
+        temp = get_current_temperature_f()
+        print(f"T = {temp:.3g}°f")
 
-        for zone in range(num_zones):
-            values.append(f"{zone_names[zone]}: {get_current_temperature_f(zone):.2f}°f")
+        # values = [
+        #     f"t = {sim.last_t:.2f}s\t",
+        #     f"Outside: {c_to_f(sim.outside_temp):.2f}°f",
+        # ]
 
-        average()
+        # for zone in range(num_zones):
+        #     values.append(f"{zone_names[zone]}: {get_current_temperature_f(zone):.2f}°f")
 
-        print("\t".join(values))
+        # average()
+
+        # print("\t".join(values))
 
 
 ldo2 = digitalio.DigitalInOut(board.LDO2)

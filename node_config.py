@@ -6,7 +6,7 @@ NODE_TYPE_TEMPERATURE = 3
 NODE_TYPE_RAW = 4
 
 # Node's type, used to determine what code is run.
-node_type = NODE_TYPE_RAW
+node_type = NODE_TYPE_TEMPERATURE
 
 # Total number of zones in the system
 num_zones = 3
